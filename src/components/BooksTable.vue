@@ -18,8 +18,8 @@
   <button id="addBtn" @click="showForm = true">Add Book</button>
 
   <div v-if="showForm">
-    <h2>Add a new book</h2>
     <form @submit.prevent="handleAddBook">
+      <h2>Add a new book</h2>
       <label>
         Title:
         <input v-model="newBook.title" required />
@@ -85,6 +85,7 @@ th {
 
 div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -93,6 +94,13 @@ div {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 400;
 }
 
 form {

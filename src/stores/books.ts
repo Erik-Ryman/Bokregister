@@ -5,7 +5,6 @@ import type { Book } from '../types/book'
 export const useBookStore = defineStore('books', () => {
   const books = ref([] as Book[])
 
-  // Define fetch function
   const fetchBooks = async () => {
     try {
       const response = await fetch('/books.json')
@@ -23,11 +22,9 @@ export const useBookStore = defineStore('books', () => {
     books.value.push(book)
   }
 
-  // Fetch books immediately
   fetchBooks()
 
   return {
-    // Expose state and fetch function
     books,
     fetchBooks,
     addBook
