@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="book in books.books" :key="book.isbn">
+      <tr v-for="book in books.books" :key="book.isbn" @click="viewBook(book.isbn)">
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
         <td>{{ book.isbn }}</td>
@@ -41,8 +41,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useBookStore } from '../stores/books'
+import { useRouter } from 'vue-router'
 
 const books = useBookStore()
+const router = useRouter()
+
 onMounted(() => {
   books.fetchBooks()
 })
@@ -62,6 +65,10 @@ const handleAddBook = () => {
     isbn: ''
   }
   showForm.value = false
+}
+
+const viewBook = (isbn: string) => {
+  router.push({ path: `/book/${isbn}` })
 }
 </script>
 <style scoped>
