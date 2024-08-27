@@ -85,6 +85,11 @@ td {
   text-align: left;
 }
 
+tr:hover {
+  background-color: #1e1e1e;
+  cursor: pointer;
+}
+
 th {
   background-color: #f4f4f4;
   color: #333;
