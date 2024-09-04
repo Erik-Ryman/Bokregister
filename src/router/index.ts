@@ -10,7 +10,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/book/:isbn',
+      path: '/book/:id',
       component: () => import('../views/BookDetails.vue'),
       props: true
     }
