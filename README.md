@@ -1,3 +1,6 @@
+Vue 3 frontend med Tailwind till repetitionsuppgiften.
+
+
 # Bokregister
 
 This template should help get you started developing with Vue 3 in Vite.
